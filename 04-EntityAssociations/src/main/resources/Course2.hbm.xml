@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-5.0.dtd">
+
+<hibernate-mapping>
+	
+	<class name="com.training.bean.pack6.Course" table="courses20">
+	
+   		<id name="courseId" type="int"  >
+   			<generator class="native"/>
+  		</id>
+  		
+  		<property name="courseName"></property>
+  		<property name="fee"></property>
+  		
+  		<set name="subjects" cascade="all" table="Courses20_Subjects20">
+  			<key column="course_id"></key>
+  			<many-to-many
+  				class="com.zensar.training.bean.pack6.Subject"
+  				column="subject_id"
+  				unique="true"></many-to-many>
+  				
+  			
+  		</set>
+
+	</class>
+   	
+</hibernate-mapping>

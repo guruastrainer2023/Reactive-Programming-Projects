@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-5.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.training.bean.pack3.Person" table="persons10">
+		<id name="personId">
+			<generator class="assigned"></generator>
+		</id>
+		<property name="personName"></property>
+		<property name="dateOfBirth"></property>
+		<property name="gender"></property>
+		
+		<one-to-one name="contactInfo" cascade="all"></one-to-one>
+	</class>
+	
+
+</hibernate-mapping>

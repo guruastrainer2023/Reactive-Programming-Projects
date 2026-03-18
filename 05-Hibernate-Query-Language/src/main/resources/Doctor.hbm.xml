@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-5.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.zensar.training.bean.Doctor" table="doctors10">
+		<id name="id">
+			<generator class="native">
+			</generator>
+		</id>
+		<property name="name">
+		</property>
+		<property name="fees">
+		</property>
+		<property name="gender">
+		</property>
+		<property name="practicingSince">
+		</property>
+	</class>
+	
+	
+</hibernate-mapping>

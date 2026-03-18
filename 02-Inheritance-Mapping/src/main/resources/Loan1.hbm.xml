@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-5.0.dtd">
+  
+ <hibernate-mapping > 
+
+	<class name="com.training.bean.Loan" table="LOAN10" discriminator-value="L">
+
+		<id name="loanId">
+			<column name="LOANID"></column>
+			<generator class="native"></generator>
+		</id>
+
+		<discriminator column="loanType" type="string"></discriminator>
+		
+		<property name="customerName">
+			<column name="customerName"></column>
+		</property>
+		<property name="loanAmt">
+			<column name="LOANAMOUNT"/>
+		</property>
+		
+		<property name="loanDate">
+			<column name="loanDate"/>
+		</property>
+		
+	
+		<subclass name="com.training.bean.CarLoan" discriminator-value="C">
+			<property name="carDetails"></property>
+			<property name="registeredState"></property>
+		</subclass>
+		
+		<subclass name="com.training.bean.HomeLoan" discriminator-value="H">
+			<property name="homeAddress"></property>
+			<property name="ownedBy"></property>
+		</subclass>
+		
+			
+		
+		
+	</class> 
+  
+            
+ </hibernate-mapping>  

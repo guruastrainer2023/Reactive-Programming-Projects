@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-5.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="com.training.model.Bill"
+		table="Bills">
+
+		<id name="id" column="id">
+			<generator class="native" />
+		</id>
+		<property name="customerName"></property>
+		<property name="billingDate"></property>
+		
+		<list name="billItems" table="Bill_Items">
+			<key column="bill_id"></key>
+			<list-index column="idx"></list-index>
+			<composite-element class="com.training.model.BillItem">
+				<property name="slNo"></property>
+				<property name="productName"></property>
+				<property name="quantity"></property>
+				<property name="price"></property>
+				
+			</composite-element>
+		</list>
+
+	</class>
+
+</hibernate-mapping>

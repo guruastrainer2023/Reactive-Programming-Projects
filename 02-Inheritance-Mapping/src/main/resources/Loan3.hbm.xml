@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-5.0.dtd">
+  
+ <hibernate-mapping> 
+
+	<class name="com.training.bean.Loan" table="LOAN30">
+
+		<id name="loanId">
+			<column name="LOANID"></column>
+			<generator class="assigned"></generator>
+		</id>
+
+		
+		<property name="customerName">
+			<column name="customerName"></column>
+		</property>
+		<property name="loanAmt">
+			<column name="LOANAMOUNT"/>
+		</property>
+		
+		<property name="loanDate">
+			<column name="loanDate"/>
+		</property>
+		
+	
+		<joined-subclass name="com.training.bean.CarLoan" table="CarLoan30">
+			<key column="loanId"></key>
+			<property name="carDetails"></property>
+			<property name="registeredState"></property>
+		</joined-subclass>
+		
+		<joined-subclass name="com.training.bean.HomeLoan" table="HomeLoan30">
+			<key column="loanId"></key>
+			<property name="homeAddress"></property>
+			<property name="ownedBy"></property>
+		</joined-subclass>
+		
+			
+		
+		
+	</class> 
+  
+            
+ </hibernate-mapping>  

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-5.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="com.training.bean.pack3.ContactInfo" table="contactInfos10">
+		<id name="contactId">
+			<generator class="foreign">
+				<param name="property">person</param>
+			</generator>
+		</id>
+	
+	<property name="email"></property>
+	<property name="phone"></property>
+	<one-to-one name="person" cascade="all"></one-to-one>
+</class>
+
+	
+
+</hibernate-mapping>

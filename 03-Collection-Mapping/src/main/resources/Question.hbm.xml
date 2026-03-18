@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-5.0.dtd">
+  
+ <hibernate-mapping> 
+
+	<class name="com.training.bean.pack1.Question" table="Questions">
+		<id name="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="questionText"></property>
+		<property name="mark"></property>
+		<array name="answerChoices" table="Questions_Choices">
+			<key column="question_id"></key>
+			<index column="idx"></index>
+			<element column="choice" type="java.lang.String"></element>
+		</array>
+		
+	</class> 
+  
+            
+ </hibernate-mapping>  

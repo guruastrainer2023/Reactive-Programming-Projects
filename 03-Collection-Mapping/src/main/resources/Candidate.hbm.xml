@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-5.0.dtd">
+  
+ <hibernate-mapping>
+
+	<class name="com.training.bean.pack1.Candidate" table="Candidates">
+		<id name="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="name"></property>
+		<property name="city"></property>
+		<primitive-array name="marks" table="Candidates_Marks">
+			<key column="candidate_id"></key>
+			<index column="idx"></index>
+			<element column="mark" type="double"></element>
+		</primitive-array>
+		
+	</class> 
+  
+            
+ </hibernate-mapping>  

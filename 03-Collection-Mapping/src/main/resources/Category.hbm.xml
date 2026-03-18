@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-5.0.dtd">
+  
+ <hibernate-mapping> 
+
+	<class name="com.training.model.Category" table="Categories">
+		<id name="id">
+				<generator class="native"></generator>
+		</id>
+		<property name="categoryName"></property>
+		<list name="technologyNames" table="Cat_TechNames">
+			<key column="cat_id"></key>
+			<index column="idx"></index>
+			<element column="tech_name" type="java.lang.String"></element>
+		</list>
+	</class> 
+  
+            
+ </hibernate-mapping>  

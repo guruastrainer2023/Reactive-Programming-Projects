@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-5.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="com.training.bean.pack5.Person" table="Persons30">
+
+		<id name="personId" type="int">
+			<generator class="assigned" />
+		</id>
+
+		<property name="personName"></property>
+		<property name="dateOfBirth"></property>
+		<property name="gender"></property>
+		
+		<join table="Person30_ContactInfo30" optional="true">
+			<key column="person_id" unique="true">
+			</key>
+			<many-to-one name="contactInfo" class="com.training.bean.pack5.ContactInfo"
+				column="contact_id" cascade="all" lazy="false" unique="true" not-null="true">
+			</many-to-one>
+		</join>
+		
+
+
+	</class>
+
+</hibernate-mapping>

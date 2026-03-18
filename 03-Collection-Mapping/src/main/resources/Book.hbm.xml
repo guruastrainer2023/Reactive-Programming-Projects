@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-5.0.dtd">
+  
+ <hibernate-mapping> 
+
+	<class name="com.training.bean.pack2.Book" table="Books">
+		<id name="id">
+				<generator class="native"></generator>
+		</id>
+		<property name="bookName"></property>
+		<property name="authorName"></property>
+		<list name="topics" table="Books_Topics">
+			<key column="book_id"></key>
+			<index column="idx"></index>
+			<element column="topicName" type="java.lang.String"></element>
+		</list>
+	</class> 
+  
+            
+ </hibernate-mapping>  

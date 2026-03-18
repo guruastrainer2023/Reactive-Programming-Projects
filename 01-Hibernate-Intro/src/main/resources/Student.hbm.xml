@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-5.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.training.demo.bean.Student" table="students">
+		<id name="rollNumber">
+			<generator class="increment">
+			</generator>
+		</id>
+		<property name="name">
+		</property>
+		<property name="marks">
+		</property>
+		<component name="address">
+			<property name="doorNumber"></property>
+			<property name="streetName"></property>
+			<property name="areaName"></property>
+			<property name="city"></property>
+			<property name="pincode"></property>
+		</component>
+		
+	</class>
+</hibernate-mapping>
