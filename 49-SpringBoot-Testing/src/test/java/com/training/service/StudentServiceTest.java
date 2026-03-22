@@ -1,0 +1,26 @@
+package com.training.service;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import com.training.bean.Student;
+
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class StudentServiceTest {
+
+	@Autowired
+	StudentService service;
+	
+	@Test
+	public void testServiceMethod() {
+		Student student=service.getStudentById(101);
+		assertEquals(null, student);
+	}
+}
